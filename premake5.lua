@@ -26,6 +26,7 @@ project "EnginePrototype"
 
     includedirs
     {
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
@@ -73,8 +74,8 @@ project "Sandbox"
 
     includedirs
     {
-        "EnginePrototype/vendor/spdlog/include",
-        "EnginePrototype/src"
+        "EnginePrototype/src",
+        "EnginePrototype/vendor/spdlog/include"
     }
 
     links
