@@ -1,6 +1,6 @@
 #include "Application.h"
 
-namespace EnginePrototype {
+namespace TomoeEngine {
 
 	Application::Application() {
 

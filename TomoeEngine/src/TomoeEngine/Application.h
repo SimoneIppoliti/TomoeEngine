@@ -2,9 +2,9 @@
 
 #include "Core.h"
 
-namespace EnginePrototype {
+namespace TomoeEngine {
 	
-	class ENGINE_PROTOTYPE_API Application
+	class TOMOE_ENGINE_API Application
 	{
 	public:
 		Application();

@@ -2,9 +2,9 @@
 
 // for use by applications
 
-#include "EnginePrototype/Application.h"
-#include "EnginePrototype/Log.h"
+#include "TomoeEngine/Application.h"
+#include "TomoeEngine/Log.h"
 
 // ---Entry Point-------------------------
-#include "EnginePrototype/EntryPoint.h"
+#include "TomoeEngine/EntryPoint.h"
 // ---------------------------------------

@@ -1,4 +1,4 @@
-workspace "EnginePrototype"
+workspace "TomoeEngine"
     architecture "x64"
 
     configurations
@@ -10,8 +10,8 @@ workspace "EnginePrototype"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "EnginePrototype"
-    location "EnginePrototype"
+project "TomoeEngine"
+    location "TomoeEngine"
     kind "SharedLib"
     language "C++"
 
@@ -37,8 +37,8 @@ project "EnginePrototype"
 
         defines
         {
-            "ENGINE_PLATFORM_WINDOWS",
-            "ENGINE_BUILD_DLL"
+            "TOMOE_PLATFORM_WINDOWS",
+            "TOMOE_BUILD_DLL"
         }
 
         postbuildcommands
@@ -47,15 +47,15 @@ project "EnginePrototype"
         }
     
     filter "configurations:Debug"
-        defines "ENGINE_DEBUG"
+        defines "TOMOE_DEBUG"
         symbols "On"
 
     filter "configurations:Release"
-        defines "ENGINE_RELEASE"
+        defines "TOMOE_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
-        defines "ENGINE_DIST"
+        defines "TOMOE_DIST"
         optimize "On"
 
 project "Sandbox"
@@ -74,13 +74,13 @@ project "Sandbox"
 
     includedirs
     {
-        "EnginePrototype/src",
-        "EnginePrototype/vendor/spdlog/include"
+        "TomoeEngine/src",
+        "TomoeEngine/vendor/spdlog/include"
     }
 
     links
     {
-        "EnginePrototype"
+        "TomoeEngine"
     }
 
     filter "system:windows"
@@ -90,17 +90,17 @@ project "Sandbox"
 
         defines
         {
-            "ENGINE_PLATFORM_WINDOWS"
+            "TOMOE_PLATFORM_WINDOWS"
         }
 
     filter "configurations:Debug"
-        defines "ENGINE_DEBUG"
+        defines "TOMOE_DEBUG"
         symbols "On"
 
     filter "configurations:Release"
-        defines "ENGINE_RELEASE"
+        defines "TOMOE_RELEASE"
         optimize "On"
 
     filter "configurations:Dist"
-        defines "ENGINE_DIST"
+        defines "TOMOE_DIST"
         optimize "On"

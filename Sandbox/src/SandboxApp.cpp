@@ -1,6 +1,6 @@
-#include <EnginePrototype.h>
+#include <TomoeEngine.h>
 
-class Sandbox : public EnginePrototype::Application {
+class Sandbox : public TomoeEngine::Application {
 public:
 	Sandbox() {
 
@@ -11,6 +11,6 @@ public:
 	}
 };
 
-EnginePrototype::Application* EnginePrototype::CreateApplication() {
+TomoeEngine::Application* TomoeEngine::CreateApplication() {
 	return new Sandbox();
 }
