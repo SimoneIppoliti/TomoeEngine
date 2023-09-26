@@ -18,6 +18,9 @@ project "TomoeEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "tomoepch.h"
+    pchsource "TomoeEngine/src/tomoepch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",

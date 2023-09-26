@@ -2,9 +2,6 @@
 
 #include "TomoeEngine/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace TomoeEngine {
 
 	enum class EventType

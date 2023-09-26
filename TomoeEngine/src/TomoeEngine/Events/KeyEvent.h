@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace TomoeEngine {
 	
 	class TOMOE_ENGINE_API KeyEvent : public Event
