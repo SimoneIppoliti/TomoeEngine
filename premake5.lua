@@ -10,6 +10,12 @@ workspace "TomoeEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "TomoeEngine/vendor/GLFW/include"
+
+include "TomoeEngine/vendor/GLFW"
+
 project "TomoeEngine"
     location "TomoeEngine"
     kind "SharedLib"
@@ -30,7 +36,14 @@ project "TomoeEngine"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

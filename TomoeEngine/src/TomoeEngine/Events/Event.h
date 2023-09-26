@@ -1,5 +1,6 @@
 #pragma once
 
+#include "tomoepch.h"
 #include "TomoeEngine/Core.h"
 
 namespace TomoeEngine {
@@ -29,7 +30,7 @@ namespace TomoeEngine {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class TOMOE_ENGINE_API Event
+	class TOMOE_API Event
 	{
 		friend class EventDispatcher;
 	public:

@@ -1,3 +1,6 @@
 [submodule "TomoeEngine/vendor/spdlog"]
 	path = TomoeEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "TomoeEngine/vendor/GLFW"]
+	path = TomoeEngine/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

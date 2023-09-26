@@ -4,7 +4,7 @@
 
 namespace TomoeEngine {
 	
-	class TOMOE_ENGINE_API MouseMovedEvent : public Event
+	class TOMOE_API MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -26,7 +26,7 @@ namespace TomoeEngine {
 		float m_MouseX, m_MouseY;
 	};
 
-	class TOMOE_ENGINE_API MouseScrolledEvent : public Event
+	class TOMOE_API MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -48,7 +48,7 @@ namespace TomoeEngine {
 		float m_XOffset, m_YOffset;
 	};
 
-	class TOMOE_ENGINE_API MouseButtonEvent : public Event
+	class TOMOE_API MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -61,7 +61,7 @@ namespace TomoeEngine {
 		int m_Button;
 	};
 
-	class TOMOE_ENGINE_API MouseButtonPressedEvent : public MouseButtonEvent
+	class TOMOE_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -77,7 +77,7 @@ namespace TomoeEngine {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class TOMOE_ENGINE_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class TOMOE_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

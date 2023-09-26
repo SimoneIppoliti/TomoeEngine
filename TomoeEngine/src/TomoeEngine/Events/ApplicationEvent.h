@@ -4,7 +4,7 @@
 
 namespace TomoeEngine {
 	
-	class TOMOE_ENGINE_API WindowResizeEvent : public Event
+	class TOMOE_API WindowResizeEvent : public Event
 	{
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
@@ -26,7 +26,7 @@ namespace TomoeEngine {
 		unsigned int m_Width, m_Height;
 	};
 
-	class TOMOE_ENGINE_API WindowCloseEvent : public Event
+	class TOMOE_API WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}
@@ -35,7 +35,7 @@ namespace TomoeEngine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class TOMOE_ENGINE_API AppTickEvent : public Event
+	class TOMOE_API AppTickEvent : public Event
 	{
 	public:
 		AppTickEvent() {}
@@ -44,7 +44,7 @@ namespace TomoeEngine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class TOMOE_ENGINE_API AppUpdateEvent : public Event
+	class TOMOE_API AppUpdateEvent : public Event
 	{
 	public:
 		AppUpdateEvent() {}
@@ -53,7 +53,7 @@ namespace TomoeEngine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class TOMOE_ENGINE_API AppRenderEvent : public Event
+	class TOMOE_API AppRenderEvent : public Event
 	{
 	public:
 		AppRenderEvent() {}

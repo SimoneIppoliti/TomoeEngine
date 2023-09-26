@@ -5,7 +5,7 @@
 
 namespace TomoeEngine {
 	
-	class TOMOE_ENGINE_API Application
+	class TOMOE_API Application
 	{
 	public:
 		Application();

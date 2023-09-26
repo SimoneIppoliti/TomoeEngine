@@ -6,7 +6,7 @@
 
 namespace TomoeEngine {
 
-	class TOMOE_ENGINE_API Log
+	class TOMOE_API Log
 	{
 	public:
 		static void Init();

@@ -4,7 +4,7 @@
 
 namespace TomoeEngine {
 	
-	class TOMOE_ENGINE_API KeyEvent : public Event
+	class TOMOE_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -17,7 +17,7 @@ namespace TomoeEngine {
 		int m_KeyCode;
 	};
 
-	class TOMOE_ENGINE_API KeyPressedEvent : public KeyEvent
+	class TOMOE_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
@@ -37,7 +37,7 @@ namespace TomoeEngine {
 		int m_RepeatCount;
 	};
 
-	class TOMOE_ENGINE_API KeyReleasedEvent : public KeyEvent
+	class TOMOE_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)
