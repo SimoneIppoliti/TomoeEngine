@@ -11,6 +11,8 @@
 #include <unordered_set>
 #include <utility>
 
+#include "TomoeEngine/Log.h"
+
 #ifdef TOMOE_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
