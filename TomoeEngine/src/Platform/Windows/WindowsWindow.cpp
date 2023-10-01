@@ -5,6 +5,8 @@
 #include "TomoeEngine/Events/MouseEvent.h"
 #include "TomoeEngine/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace TomoeEngine {
 
 	static bool s_GLFWInitialized = false;
@@ -47,6 +49,8 @@ namespace TomoeEngine {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		TOMOE_CORE_ASSERT(status, "Failed to initialize Glad.");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

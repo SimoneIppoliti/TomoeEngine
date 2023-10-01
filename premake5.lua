@@ -22,7 +22,6 @@ project "TomoeEngine"
     location "TomoeEngine"
     kind "SharedLib"
     language "C++"
-    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -59,7 +58,8 @@ project "TomoeEngine"
         defines
         {
             "TOMOE_PLATFORM_WINDOWS",
-            "TOMOE_BUILD_DLL"
+            "TOMOE_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
