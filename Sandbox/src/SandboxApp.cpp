@@ -1,12 +1,31 @@
 #include <TomoeEngine.h>
 
-class Sandbox : public TomoeEngine::Application {
+class ExampleLayer : public TomoeEngine::Layer
+{
 public:
-	Sandbox() {
-
+	ExampleLayer()
+		: Layer("Example") {}
+	
+	void OnUpdate() override
+	{
+		TOMOE_INFO("ExampleLayer::Update");
 	}
 
-	~Sandbox() {
+	void OnEvent(TomoeEngine::Event& event) override
+	{
+		TOMOE_TRACE("{0}", event);
+	}
+};
+
+class Sandbox : public TomoeEngine::Application {
+public:
+	Sandbox()
+	{
+		PushLayer(new ExampleLayer());
+	}
+
+	~Sandbox()
+	{
 
 	}
 };

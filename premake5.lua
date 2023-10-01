@@ -66,14 +66,17 @@ project "TomoeEngine"
     
     filter "configurations:Debug"
         defines "TOMOE_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "TOMOE_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "TOMOE_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
@@ -114,12 +117,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "TOMOE_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "TOMOE_RELEASE"
+        buildoptions "/MD"
         optimize "On"
-
-    filter "configurations:Dist"
+        
+        filter "configurations:Dist"
         defines "TOMOE_DIST"
+        buildoptions "/MD"
         optimize "On"
