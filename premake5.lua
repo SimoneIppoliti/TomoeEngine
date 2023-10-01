@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "TomoeEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "TomoeEngine/vendor/Glad/include"
 
 include "TomoeEngine/vendor/GLFW"
+include "TomoeEngine/vendor/Glad"
 
 project "TomoeEngine"
     location "TomoeEngine"
@@ -38,14 +40,15 @@ project "TomoeEngine"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links
     {
         "GLFW",
-        "opengl32.lib",
-        "dwmapi.lib"
+        "Glad",
+        "opengl32.lib"
     }
 
     filter "system:windows"
