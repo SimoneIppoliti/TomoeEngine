@@ -20,6 +20,8 @@ include "TomoeEngine/vendor/GLFW"
 include "TomoeEngine/vendor/Glad"
 include "TomoeEngine/vendor/imgui"
 
+startproject "Sandbox"
+
 project "TomoeEngine"
     location "TomoeEngine"
     kind "SharedLib"
