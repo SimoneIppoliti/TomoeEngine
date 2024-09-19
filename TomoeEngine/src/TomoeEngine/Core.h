@@ -10,6 +10,10 @@
 		#error Tomoe Engine only supports Windows.
 #endif
 
+#ifdef TOMOE_DEBUG
+	#define TOMOE_ENABLE_ASSERTS
+#endif
+
 #ifdef TOMOE_ENABLE_ASSERTS
 	#define TOMOE_ASSERT(x, ...) { if (!(x)) { TOMOE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define TOMOE_CORE_ASSERT(x, ...) { if (!(x)) { TOMOE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
