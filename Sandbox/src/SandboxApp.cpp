@@ -8,7 +8,7 @@ public:
 	
 	void OnUpdate() override
 	{
-		TOMOE_INFO("ExampleLayer::Update");
+		//TOMOE_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(TomoeEngine::Event& e) override
@@ -22,6 +22,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new TomoeEngine::ImGuiLayer());
 	}
 
 	~Sandbox()
