@@ -13,7 +13,7 @@ namespace TomoeEngine {
 
 	static void GLFWErrorCallback(int error, const char* description)
 	{
-		TOMOE_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
+		TOMOE_CORE_ERROR("GLFW Error ({}): {}", error, description);
 	}
 
 	Window* Window::Create(const WindowProps& props)
@@ -37,7 +37,7 @@ namespace TomoeEngine {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
-		TOMOE_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		TOMOE_CORE_INFO("Creating window {} ({}, {})", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized)
 		{

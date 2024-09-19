@@ -11,9 +11,9 @@ public:
 		TOMOE_INFO("ExampleLayer::Update");
 	}
 
-	void OnEvent(TomoeEngine::Event& event) override
+	void OnEvent(TomoeEngine::Event& e) override
 	{
-		TOMOE_TRACE("{0}", event);
+		TOMOE_TRACE("{}", e.ToString());
 	}
 };
 

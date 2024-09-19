@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 	TomoeEngine::Log::Init();
 	TOMOE_CORE_ERROR("Initialized Log");
 	int a = 5;
-	TOMOE_FATAL("Hello. Var={0}", a);
+	TOMOE_FATAL("Hello. Var={}", a);
 
 	auto app = TomoeEngine::CreateApplication();
 	app->Run();
