@@ -1,6 +1,8 @@
 workspace "TomoeEngine"
     architecture "x64"
-
+    
+    startproject "Sandbox"
+    
     configurations
     {
         "Debug",
@@ -20,7 +22,6 @@ include "TomoeEngine/vendor/GLFW"
 include "TomoeEngine/vendor/Glad"
 include "TomoeEngine/vendor/imgui"
 
-startproject "Sandbox"
 
 project "TomoeEngine"
     location "TomoeEngine"
@@ -75,17 +76,17 @@ project "TomoeEngine"
     
     filter "configurations:Debug"
         defines "TOMOE_DEBUG"
-        buildoptions "/MDd"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
         defines "TOMOE_RELEASE"
-        buildoptions "/MD"
+        runtime "Release"
         optimize "On"
 
     filter "configurations:Dist"
         defines "TOMOE_DIST"
-        buildoptions "/MD"
+        runtime "Release"
         optimize "On"
 
 project "Sandbox"
@@ -126,15 +127,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "TOMOE_DEBUG"
-        buildoptions "/MDd"
+        runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
         defines "TOMOE_RELEASE"
-        buildoptions "/MD"
+        runtime "Release"
         optimize "On"
         
         filter "configurations:Dist"
         defines "TOMOE_DIST"
-        buildoptions "/MD"
+        runtime "Release"
         optimize "On"
