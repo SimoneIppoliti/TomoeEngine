@@ -17,6 +17,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "TomoeEngine/vendor/GLFW/include"
 IncludeDir["Glad"] = "TomoeEngine/vendor/Glad/include"
 IncludeDir["ImGui"] = "TomoeEngine/vendor/imgui"
+IncludeDir["glm"] = "TomoeEngine/vendor/glm"
 
 group "Dependencies"
     include "TomoeEngine/vendor/GLFW"
@@ -40,7 +41,8 @@ project "TomoeEngine"
     files
     {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp"
     }
 
     includedirs
@@ -49,7 +51,8 @@ project "TomoeEngine"
         "%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links
@@ -61,20 +64,20 @@ project "TomoeEngine"
     }
 
     filter "system:windows"
-        cppdialect "C++20"
-        systemversion "latest"
-
-        defines
-        {
-            "TOMOE_PLATFORM_WINDOWS",
-            "TOMOE_BUILD_DLL",
-            "GLFW_INCLUDE_NONE"
-        }
-
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-        }
+    cppdialect "C++20"
+    systemversion "latest"
+    
+    defines
+    {
+        "TOMOE_PLATFORM_WINDOWS",
+        "TOMOE_BUILD_DLL",
+        "GLFW_INCLUDE_NONE"
+    }
+    
+    postbuildcommands
+    {
+        ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
+    }
     
     filter "configurations:Debug"
         defines "TOMOE_DEBUG"
@@ -109,7 +112,8 @@ project "Sandbox"
     includedirs
     {
         "TomoeEngine/src",
-        "TomoeEngine/vendor/spdlog/include"
+        "TomoeEngine/vendor/spdlog/include",
+        "%{IncludeDir.glm}"
     }
 
     links
@@ -118,14 +122,14 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "C++20"
-        systemversion "latest"
-
-        defines
-        {
-            "TOMOE_PLATFORM_WINDOWS"
-        }
-
+    cppdialect "C++20"
+    systemversion "latest"
+    
+    defines
+    {
+        "TOMOE_PLATFORM_WINDOWS"
+    }
+    
     filter "configurations:Debug"
         defines "TOMOE_DEBUG"
         runtime "Debug"
@@ -136,7 +140,7 @@ project "Sandbox"
         runtime "Release"
         optimize "On"
         
-        filter "configurations:Dist"
+    filter "configurations:Dist"
         defines "TOMOE_DIST"
         runtime "Release"
         optimize "On"

@@ -7,3 +7,6 @@
 [submodule "TomoeEngine/vendor/imgui"]
 	path = TomoeEngine/vendor/imgui
 	url = https://github.com/sgab53/imgui.git
+[submodule "TomoeEngine/vendor/glm"]
+	path = TomoeEngine/vendor/glm
+	url = https://github.com/g-truc/glm.git
