@@ -7,6 +7,8 @@
 #include "TomoeEngine/Events/Event.h"
 #include "TomoeEngine/Events/ApplicationEvent.h"
 
+#include "TomoeEngine/ImGui/ImGuiLayer.h"
+
 namespace TomoeEngine {
 	
 	class TOMOE_API Application
@@ -28,6 +30,7 @@ namespace TomoeEngine {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

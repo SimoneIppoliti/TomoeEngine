@@ -1,10 +1,14 @@
 #pragma once
 
 #ifdef TOMOE_PLATFORM_WINDOWS
-	#ifdef TOMOE_BUILD_DLL
-		#define TOMOE_API __declspec(dllexport)
+	#if TOMOE_DYNAMIC_LINK
+		#ifdef TOMOE_BUILD_DLL
+			#define TOMOE_API __declspec(dllexport)
+		#else
+			#define TOMOE_API __declspec(dllimport)
+		#endif
 	#else
-		#define TOMOE_API __declspec(dllimport)
+		#define TOMOE_API
 	#endif
 #else
 		#error Tomoe Engine only supports Windows.

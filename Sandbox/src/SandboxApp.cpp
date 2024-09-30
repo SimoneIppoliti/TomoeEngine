@@ -1,5 +1,7 @@
 #include <TomoeEngine.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public TomoeEngine::Layer
 {
 public:
@@ -9,11 +11,20 @@ public:
 	void OnUpdate() override
 	{
 		//TOMOE_INFO("ExampleLayer::Update");
+		if (TomoeEngine::Input::IsKeyPressed(TOMOE_KEY_TAB))
+			TOMOE_INFO("Tab key is pressed.");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(TomoeEngine::Event& e) override
 	{
-		TOMOE_TRACE("{}", e.ToString());
+		// TOMOE_TRACE("{}", e.ToString());
 	}
 };
 
@@ -22,7 +33,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new TomoeEngine::ImGuiLayer());
 	}
 
 	~Sandbox()
@@ -31,6 +41,7 @@ public:
 	}
 };
 
-TomoeEngine::Application* TomoeEngine::CreateApplication() {
+TomoeEngine::Application* TomoeEngine::CreateApplication()
+{
 	return new Sandbox();
 }
