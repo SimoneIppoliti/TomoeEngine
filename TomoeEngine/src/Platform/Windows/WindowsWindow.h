@@ -1,6 +1,8 @@
 #pragma once
 
 #include "TomoeEngine/Window.h"
+#include "TomoeEngine/Renderer/GraphicsContext.h"
+
 #include <GLFW/glfw3.h>
 
 namespace TomoeEngine {
@@ -29,6 +31,7 @@ namespace TomoeEngine {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
